@@ -1,0 +1,18 @@
+{
+    "keyboard_name": "Tiger80",
+
+    "features": {
+        "bootmagic": true,
+        "mousekey": true,
+        "extrakey": true,
+        "console": false,
+        "command": false,
+        "nkro": true,
+        "backlight": false,
+        "rgblight": false,
+        "audio": false,
+
+        "locking_support": true,
+        "locking_resync": true
+    }
+}
