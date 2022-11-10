@@ -52,6 +52,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 //#define NO_PRINT
 
 /* QMK-DFU bootloader configuration */
+// Key for leaving the bootloader:
 // Should be the key to the left of Esc, i.e. the second key in the top row.
 #define QMK_ESC_OUTPUT F1  // COL pin if COL2ROW
 #define QMK_ESC_INPUT  D2  // ROW pin if COL2ROW

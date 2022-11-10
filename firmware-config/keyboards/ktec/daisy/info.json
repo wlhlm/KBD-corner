@@ -36,7 +36,7 @@
     "debounce": 5,
 
     "indicators": {
-        // there is an additional indicator LED on the Esc key (wired to Pin )
+        // there is an additional indicator LED on the Esc key (wired to Pin D1)
         "caps_lock": "C6",
         "on_state": 0
     },
