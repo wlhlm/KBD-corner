@@ -17,7 +17,7 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 ## Flashing the firmware onto the keyboard
 
-The Daisy comes with a HID bootloader from the factory with custom VID and PID rather than the well supported Teensy IDs. It doesn't need an OS driver, but instead a HID flashing tool that understands the custom IDs. If you have access to an AVR programmer, consider installing on of the more standard bootloaders.
+The Daisy comes with a HID bootloader from the factory with custom VID and PID rather than the well supported Teensy IDs. It doesn't need an OS driver, but instead a HID flashing tool that understands the custom IDs. If you have access to an AVR programmer, consider installing one of the more standard bootloaders.
 
 1. To enter flash mode, disconnect the keyboard first. Then, hold the leftmost key in the top row (Escape key) while reconnecting the keyboard.
 2. To flash the .hex file, using on of the following tools:
@@ -27,3 +27,7 @@ The Daisy comes with a HID bootloader from the factory with custom VID and PID r
 
    - alternatively, a manually modified version of `hid_bootloader_cli` that supports the `1209:2327` ID of the Daisy bootloader
    - [YDKB reflash tool](https://ydkb.io/?daisy) (proprietary)
+
+## Additional features
+
+The Daisy has a controllable indicator under the Esc key in addition to Capslock. This LED is connected to the `D1` pin of the MCU but unused in the default configuration.
