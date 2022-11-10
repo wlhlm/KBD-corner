@@ -14,6 +14,14 @@ Here is a list of my keyboard builds:
 - keycaps: DSA Granite
 - switches: Kailh Box Royal
 
+### KBDfans Tiger80
+
+I have both the aluminium and the lite (translucent) version.
+
+Lite version:
+- keycaps: PBTfans Neon
+- switches: Gazzew Boba U4t 62g
+
 ### Realforce 87U 55g
 
 My daily driver and mostly stock. Great for gaming. Only thing that bothers me
