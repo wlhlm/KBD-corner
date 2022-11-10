@@ -1,3 +1,4 @@
 [submodule "firmware-config/qmk_firmware"]
 	path = firmware-config/qmk_firmware
 	url = https://github.com/qmk/qmk_firmware.git
+	fetchRecurseSubmodules = yes

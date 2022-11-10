@@ -10,11 +10,15 @@ keyboard specific files. QMK is included just as a submodule.
 
 ### Setup
 
-QMK does not support building keyboard config from outside of its repository,
-and since I have chosen to do just that, the keyboard files have to be symlinked
-into the QMK tree:
+QMK does not support building keyboard configs from outside of its repository,
+however there is a workaround using symlinks using the following method:
 
 ```
 $ cd qmk_firmware
-$ ln -s ../keyboards/ktec/daisy keyboards/ktec/daisy-wlhlm
+$ ln -s ../keyboards/ktec/daisy keyboards/ktec/daisy_wlhlm
+```
+
+After you ran use the QMK CLI like so:
+```
+$ qmk compile -kb ktec/daisy_wlhlm -km default
 ```
