@@ -1,8 +1,19 @@
 {
     "keyboard_name": "Tiger80 Lite",
-
     "features": {
-        "rgblight": true
+        "bootmagic": true,
+        "mousekey": true,
+        "extrakey": true,
+        "console": false,
+        "command": false,
+        "nkro": true,
+        "backlight": false,
+        "audio": false,
+
+        "rgblight": true,
+
+        "locking_support": true,
+        "locking_resync": true
     },
 
     "rgblight": {

@@ -9,8 +9,9 @@
         "command": false,
         "nkro": true,
         "backlight": false,
-        "rgblight": false,
         "audio": false,
+
+        "rgblight": false,
 
         "locking_support": true,
         "locking_resync": true
