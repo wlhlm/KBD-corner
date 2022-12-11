@@ -15,7 +15,7 @@ however there is a workaround using symlinks using the following method:
 
 ```
 $ cd qmk_firmware
-$ ln -s ../keyboards/ktec/daisy keyboards/ktec/daisy_wlhlm
+$ ln -s ../../../keyboards/ktec/daisy keyboards/ktec/daisy_wlhlm
 ```
 
 After you ran use the QMK CLI like so:
