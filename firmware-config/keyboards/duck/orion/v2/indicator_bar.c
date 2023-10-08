@@ -25,12 +25,12 @@
  * function in the main driver. We give it a dummy name here. The same approach
  * is used by the work_louder keyboards.
  */
-#undef RGB_DI_PIN
-#define RGB_DI_PIN INDICATOR_BAR_PIN
+#undef WS2812_DI_PIN
+#define WS2812_DI_PIN INDICATOR_BAR_PIN
 
 #define ws2812_setleds dummy_ws2812_setleds
 
-#include "ws2812.c"
+#include "ws2812_bitbang.c"
 
 static uint8_t indicator_leds[INDICATOR_BAR_NUM_LEDS] = {0, 0, 0, 0, 0};
 

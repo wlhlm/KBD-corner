@@ -33,7 +33,9 @@
     "processor": "atmega32u4",
     "bootloader": "atmel-dfu",
 
-    "debounce": 5,
+    "bootmagic": {
+        "matrix": [5, 7]
+    },
 
     "indicators": {
         "num_lock": "B4",
@@ -43,6 +45,7 @@
     },
 
     "backlight": {
+        "driver": "timer",
         "pins": ["B1", "B2", "B3", "E6"],
         "breathing": true,
         "levels": 3
@@ -50,7 +53,6 @@
 
     "rgblight": {
         "led_count": 18,
-        "pin": "D6",
         "hue_steps": 12,
         "saturation_steps": 25,
         "brightness_steps": 12,
@@ -58,6 +60,9 @@
         "animations": {
             "rgb_test": true
         }
+    },
+    "ws2812": {
+        "pin": "D6"
     },
 
     "layouts": {

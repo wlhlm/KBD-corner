@@ -1,4 +1,4 @@
-/* Copyright 2022 Wilhelm Schuter
+/* Copyright 2023 Wilhelm Schuter
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -15,8 +15,6 @@
  */
 
 #pragma once
-
-#include "config_common.h"
 
 // key matrix size
 #define MATRIX_ROWS 6
@@ -49,8 +47,3 @@
 #define INDICATOR_BAR_MAX_BRIGHTNESS 50
 
 #define DEBUG_MATRIX_SCAN_RATE
-
-/* Bootmagic Lite key configuration */
-// Backspace key, ie. the top right key in the main key cluster
-#define BOOTMAGIC_LITE_ROW BACKSPACE_MATRIX_ROW
-#define BOOTMAGIC_LITE_COLUMN BACKSPACE_MATRIX_COL

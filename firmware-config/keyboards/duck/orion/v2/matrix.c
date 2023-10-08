@@ -57,8 +57,8 @@ static const pin_t mux_enable_pins[] = MATRIX_COL_MUX_ENABLE_PINS;
 
 static void select_col(uint8_t col) {
     if (col < 16) {
-		/* This turns the 4th bit of col into either 01 or 10 so that we can
-		 * easily check using bitwise AND below. */
+        /* This turns the 4th bit of col into either 01 or 10 so that we can
+         * easily check using bitwise AND. */
         uint8_t c = col + 8;
 
         writePin(mux_addr_pins[0],   c & 0b00000001); // A0
@@ -73,29 +73,29 @@ static void select_col(uint8_t col) {
 
 static void unselect_cols(void) {
     // demultiplexer pins
-    for (uint8_t i = 0; i < 3; i++) {
-        writePinLow(mux_addr_pins[i]);
-    }
-    for (uint8_t i = 0; i < 2; i++) {
-        writePinLow(mux_enable_pins[i]);
-    }
+    writePinLow(mux_addr_pins[0]);
+    writePinLow(mux_addr_pins[1]);
+    writePinLow(mux_addr_pins[2]);
 
-	writePinLow(col_pins[16]);
+    writePinLow(mux_enable_pins[1]);
+    writePinLow(mux_enable_pins[0]);
+
+    writePinLow(col_pins[16]);
 }
 
 static void init_pins(void) {
     // demultiplexer pins
-    for (uint8_t i = 0; i < 3; i++) {
-        setPinOutput(mux_addr_pins[i]);
-    }
-    for (uint8_t i = 0; i < 2; i++) {
-        setPinOutput(mux_enable_pins[i]);
-    }
+    setPinOutput(mux_addr_pins[0]);
+    setPinOutput(mux_addr_pins[1]);
+    setPinOutput(mux_addr_pins[2]);
+
+    setPinOutput(mux_enable_pins[0]);
+    setPinOutput(mux_enable_pins[1]);
 
     for (uint8_t x = 0; x < MATRIX_ROWS; x++) {
         setPinInputHigh(row_pins[x]);
     }
-	setPinOutput(col_pins[16]);
+    setPinOutput(col_pins[16]);
 
     setPinInputHigh(BACKSPACE_PIN);
 
@@ -113,19 +113,19 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
         // store last value of row prior to reading
         matrix_row_t last_row_value = current_matrix[row_index];
 
-		// check row pin state
-		uint8_t read_result;
-		// Backspace special case
-		if (current_col == BACKSPACE_MATRIX_COL && row_index == BACKSPACE_MATRIX_ROW) {
-			read_result = !readPin(BACKSPACE_PIN);
-		} else {
-			read_result = readPin(row_pins[row_index]);
-		}
+        // check row pin state
+        uint8_t read_result;
+        // Backspace special case
+        if (current_col == BACKSPACE_MATRIX_COL && row_index == BACKSPACE_MATRIX_ROW) {
+            read_result = !readPin(BACKSPACE_PIN);
+        } else {
+            read_result = readPin(row_pins[row_index]);
+        }
 
         if (read_result) {
             // pin HI, set col bit
             current_matrix[row_index] |= (MATRIX_ROW_SHIFTER << current_col);
-			key_pressed = true;
+            key_pressed = true;
         } else {
             // pin LO, clear col bit
             current_matrix[row_index] &= ~(MATRIX_ROW_SHIFTER << current_col);
@@ -138,7 +138,7 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
     }
 
     unselect_cols();
-	matrix_output_unselect_delay(current_col, key_pressed);
+    matrix_output_unselect_delay(current_col, key_pressed);
 
     return matrix_changed;
 }
