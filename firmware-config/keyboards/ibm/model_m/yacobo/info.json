@@ -1,6 +1,6 @@
 {
     "manufacturer": "IBM",
-    "keyboard_name": "Model M Yacobo PCB",
+    "keyboard_name": "Model M with Yacobo PCB",
     "url": "https://github.com/sje-mse/yacobo",
     "maintainer": "wlhlm",
 
@@ -28,6 +28,10 @@
     },
 
     "development_board": "bluepill",
+
+    "bootmagic": {
+        "matrix": [0, 2]
+    },
 
     "debounce": 5,
 

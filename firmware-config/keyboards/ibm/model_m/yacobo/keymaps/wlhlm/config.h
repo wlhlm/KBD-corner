@@ -1,4 +1,4 @@
-/* Copyright 2022 Wilhelm Schuster
+/* Copyright 2022 Wilhelm Schuter
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,9 +16,4 @@
 
 #pragma once
 
-#include "config_common.h"
-
-/* Bootmagic Lite key configuration */
-// Should be the Esc key, i.e. the first key in the top row.
-#define BOOTMAGIC_LITE_ROW 0
-#define BOOTMAGIC_LITE_COLUMN 2
+//#define DEBUG_MATRIX_SCAN_RATE
