@@ -1,4 +1,4 @@
-/* Copyright 2022 DZTECH <moyi4681@Live.cn>
+/* Copyright 2022 Wilhelm Schuster
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -53,8 +53,13 @@ const key_override_t volume_up_override = ko_make_with_layers_negmods_and_option
 	MOD_MASK_CAG,                     // Do not activate when any modifier other than shift is pressed
 	ko_option_no_reregister_trigger); // Specifies that the play key is not registered again after lifting shift
 
-const key_override_t volume_down_override = ko_make_with_layers_negmods_and_options(MOD_MASK_SHIFT, KC_VOLD,
-	KC_MPRV, ~0, MOD_MASK_CAG, ko_option_no_reregister_trigger);
+const key_override_t volume_down_override = ko_make_with_layers_negmods_and_options(
+	MOD_MASK_SHIFT,
+	KC_VOLD,
+	KC_MPRV,
+	~0,
+	MOD_MASK_CAG,
+	ko_option_no_reregister_trigger);
 
 const key_override_t **key_overrides = (const key_override_t *[]){
     &volume_up_override,

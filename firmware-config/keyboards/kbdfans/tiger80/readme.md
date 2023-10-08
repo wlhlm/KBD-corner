@@ -10,15 +10,11 @@ Make example for this keyboard (after setting up your build environment):
 
     make kbdfans/tiger80:default
 
-If you have the Lite model use the following to enable RGB underglow:
-
-    make kbdfans/tiger80/lite:default
-
 ## Bootloader
 
 Enter the bootloader in 3 ways:
 
-* **Bootmagic reset**: Hold down the key at (0,0) in the matrix (Esc key)
+* **Bootmagic reset**: Hold down the key at (0,0) in the matrix
 * **Physical reset button**: Briefly press the button on the back of the PCB
 * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available
 
