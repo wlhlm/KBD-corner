@@ -17,10 +17,10 @@ See the [build environment setup](https://docs.qmk.fm/#/getting_started_build_to
 
 ## Flashing the firmware onto the keyboard
 
-The Daisy comes with a HID bootloader from the factory with custom VID and PID rather than the well supported Teensy IDs. It doesn't need an OS driver, but instead a HID flashing tool that understands the custom IDs. If you have access to an AVR programmer, consider installing one of the more standard bootloaders.
+The Daisy comes with a HID bootloader from the factory but with custom VID and PID rather than the well supported Teensy IDs. It doesn't need an OS driver, but instead a HID flashing tool that understands the custom IDs. If you have access to an AVR programmer, consider replacing the factory bootloader with one of the more standard ones.
 
 1. To enter flash mode, disconnect the keyboard first. Then, hold the leftmost key in the top row (Escape key) while reconnecting the keyboard.
-2. To flash the .hex file, using on of the following tools:
+2. To flash the .hex file, use one of the following tools:
    - `hid_bootloader_cli` utlity from the [TKG Toolkit](https://github.com/kairyu/tkg-toolkit) (as of 2017-10-03, only [this old version](https://github.com/kairyu/tkg-toolkit/blob/b14c67ca8bc84c07e5fc6b2e01ae4002b808243a/windows/bin/hid_bootloader_cli.exe) works under Windows):
 
          hid_bootloader_cli -mmcu=atmega32u4 ktec_daisy_default.hex
