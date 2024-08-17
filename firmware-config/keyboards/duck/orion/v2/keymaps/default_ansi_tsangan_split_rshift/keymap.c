@@ -1,3 +1,4 @@
+// Copyright 2024 Wilhelm Schuster
 // Copyright 2022 QMK / James Young (@noroadsleft)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
