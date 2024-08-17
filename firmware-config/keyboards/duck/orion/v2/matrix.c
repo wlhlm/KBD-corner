@@ -47,43 +47,43 @@ static void select_col(uint8_t col) {
          * easily check using bitwise AND. */
         uint8_t c = col + 8;
 
-        writePin(mux_addr_pins[0],   c & 0b00000001); // A0
-        writePin(mux_addr_pins[1],   c & 0b00000010); // A1
-        writePin(mux_addr_pins[2],   c & 0b00000100); // A2
-        writePin(mux_enable_pins[0], c & 0b00001000); // U1
-        writePin(mux_enable_pins[1], c & 0b00010000); // U2
+        gpio_write_pin(mux_addr_pins[0],   c & 0b00000001); // A0
+        gpio_write_pin(mux_addr_pins[1],   c & 0b00000010); // A1
+        gpio_write_pin(mux_addr_pins[2],   c & 0b00000100); // A2
+        gpio_write_pin(mux_enable_pins[0], c & 0b00001000); // U1
+        gpio_write_pin(mux_enable_pins[1], c & 0b00010000); // U2
     } else {
-        writePinHigh(col_pins[col]);
+        gpio_write_pin_high(col_pins[col]);
     }
 }
 
 static void unselect_cols(void) {
     // demultiplexer pins
-    writePinLow(mux_addr_pins[0]);
-    writePinLow(mux_addr_pins[1]);
-    writePinLow(mux_addr_pins[2]);
+    gpio_write_pin_low(mux_addr_pins[0]);
+    gpio_write_pin_low(mux_addr_pins[1]);
+    gpio_write_pin_low(mux_addr_pins[2]);
 
-    writePinLow(mux_enable_pins[1]);
-    writePinLow(mux_enable_pins[0]);
+    gpio_write_pin_low(mux_enable_pins[1]);
+    gpio_write_pin_low(mux_enable_pins[0]);
 
-    writePinLow(col_pins[16]);
+    gpio_write_pin_low(col_pins[16]);
 }
 
 static void init_pins(void) {
     // demultiplexer pins
-    setPinOutput(mux_addr_pins[0]);
-    setPinOutput(mux_addr_pins[1]);
-    setPinOutput(mux_addr_pins[2]);
+    gpio_set_pin_output(mux_addr_pins[0]);
+    gpio_set_pin_output(mux_addr_pins[1]);
+    gpio_set_pin_output(mux_addr_pins[2]);
 
-    setPinOutput(mux_enable_pins[0]);
-    setPinOutput(mux_enable_pins[1]);
+    gpio_set_pin_output(mux_enable_pins[0]);
+    gpio_set_pin_output(mux_enable_pins[1]);
 
     for (uint8_t x = 0; x < MATRIX_ROWS; x++) {
-        setPinInputHigh(row_pins[x]);
+        gpio_set_pin_input_high(row_pins[x]);
     }
-    setPinOutput(col_pins[16]);
+    gpio_set_pin_output(col_pins[16]);
 
-    setPinInputHigh(BACKSPACE_PIN);
+    gpio_set_pin_input_high(BACKSPACE_PIN);
 
     unselect_cols();
 }
@@ -103,9 +103,9 @@ static bool read_rows_on_col(matrix_row_t current_matrix[], uint8_t current_col)
         uint8_t read_result;
         // Backspace special case
         if (current_col == BACKSPACE_MATRIX_COL && row_index == BACKSPACE_MATRIX_ROW) {
-            read_result = !readPin(BACKSPACE_PIN);
+            read_result = !gpio_read_pin(BACKSPACE_PIN);
         } else {
-            read_result = readPin(row_pins[row_index]);
+            read_result = gpio_read_pin(row_pins[row_index]);
         }
 
         if (read_result) {

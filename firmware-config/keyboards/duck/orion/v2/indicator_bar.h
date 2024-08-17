@@ -1,6 +1,8 @@
 // Copyright 2024 Wilhelm Schuster
 // SPDX-License-Identifier: GPL-2.0-or-later
 
+#pragma once
+
 #include "quantum.h"
 
 static const uint8_t indicator_bar_all_off[INDICATOR_BAR_NUM_LEDS] = {0, 0, 0, 0, 0};
