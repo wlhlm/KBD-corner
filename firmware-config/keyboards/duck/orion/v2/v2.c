@@ -6,11 +6,11 @@
 #include "indicator_bar.h"
 
 layer_state_t layer_state_set_kb(layer_state_t state) {
-	uint8_t layer_num = get_highest_layer(state);
-	if (layer_num < INDICATOR_BAR_NUM_LEDS) {
-		indicator_bar_setleds(indicator_bar_all_off);
-		indicator_bar_setleds_single(layer_num, 255);
-	}
+    uint8_t layer_num = get_highest_layer(state);
+    if (layer_num < INDICATOR_BAR_NUM_LEDS) {
+        indicator_bar_setleds(indicator_bar_all_off);
+        indicator_bar_setleds_single(layer_num, 255);
+    }
 
-	return state;
+    return state;
 }

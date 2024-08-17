@@ -18,12 +18,12 @@
 #define MATRIX_COL_MUX_ADDRESS_PINS { F0, F1, C7 }
 #define MATRIX_COL_MUX_ENABLE_PINS { C6, B6 }
 
-// Backspace is a special snowflake
+// Backspace is a special snowflake, living outside the matrix
 #define BACKSPACE_PIN E2
 #define BACKSPACE_MATRIX_ROW 5
 #define BACKSPACE_MATRIX_COL 7
 
-// LED pin definitions
+// LED pins
 #define BACKLIGHT_FROW_PIN E6   // F-keys
 #define BACKLIGHT_ALPHA_PIN B1  // alphas
 #define BACKLIGHT_NAV_PIN B2    // nav cluster

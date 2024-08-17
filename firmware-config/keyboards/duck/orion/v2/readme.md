@@ -2,10 +2,8 @@
 
 <!-- ![%KEYBOARD%](imgur.com image replace me!) -->
 
-*A short description of the keyboard/project*
-
 * Keyboard Maintainer: [wlhlm](https://github.com/wlhlm)
-* Hardware Supported: Orion Ver2.1
+* Hardware Supported: Orion PCB Ver2.1
 * Hardware Availability: group buy
 
 Make example for this keyboard (after setting up your build environment):
@@ -27,4 +25,4 @@ If the board is still running the original firmware, you can enter the bootloade
 If you have already flashed QMK, you can enter the bootloader through one of the following ways:
 
 * **Keycode in layout**: Press the key mapped to `QK_BOOT` if it is available in your layout
-* **Bootmagic reset**: Hold down the `Backspace`key and plug in the keyboard
+* **Bootmagic reset**: Hold down the `Backspace` key and plug in the keyboard
